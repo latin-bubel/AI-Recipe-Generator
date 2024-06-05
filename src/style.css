@@ -82,6 +82,10 @@ form {
   color: rgb(173, 119, 10);
 }
 
+.recipe i {
+  color: rgb(173, 119, 10);
+}
+
 footer {
   text-align: center;
   font-size: 13px;
