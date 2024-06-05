@@ -16,8 +16,12 @@ function generateRecipe(event) {
   let apiKey = "cf2c0451b1a5ae2tod3f94f0b95d3fe6";
   let prompt = `Users intructions are: Generate a short recipe containing ${instructionInput.value} `;
   let context =
-    "You are a chef passionate about cooking. You value straightforward and easy recipies. You love to write short recipies. Your mission is to generate a recipe making sure to include the needed ingretients, time needed to prepare and cook and easy understandable instructions how to prepare such meal. Make sure to follow user instructions. Generate recipe in basic HTML. At the end of the instruction add a heartwarming text in <strong> element.Sign the recipe at the end with 'AI Chef' with <strong> element ";
+    "You are a chef passionate about cooking. You value straightforward recipe. You love to write short recipies. Your mission is to generate a recipe making sure to include the needed ingretients, time needed to prepare and cook and easy understandable instructions how to prepare such meal. Make sure to follow user instructions. Generate recipe in basic HTML. At the end of the instruction add a heartwarming text in <strong> element.Sign the recipe at the end with 'AI Chef' with <strong> element. Do not include any &amp element";
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  let poemElement = document.querySelector("#recipe");
+  poemElement.classList.remove("hidden");
+  poemElement.innerHTML = `<div class = "blink"> ⏳ Generating the recipe with ${instructionInput.value} 👩‍💻</div>`;
 
   console.log("generating ");
   console.log(`Prompt: ${prompt}`);
